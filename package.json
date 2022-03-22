@@ -1,0 +1,56 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-vue": "^2.3.1",
+    "@graphql-tools/relay-operation-optimizer": "^6.4.3",
+    "amplify-category-analytics": "^3.2.23",
+    "amplify-category-function": "^3.5.5",
+    "amplify-category-geo": "^2.4.3",
+    "amplify-codegen": "^2.13.2",
+    "amplify-frontend-javascript": "^1.30.0",
+    "amplify-provider-awscloudformation": "^4.51.0",
+    "amplify-util-mock": "^3.13.2",
+    "ant-design-vue": "^1.7.8",
+    "core-js": "^3.6.5",
+    "graphql": "^15.8.0",
+    "relay-compiler": "^12.0.0",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.3",
+    "@vue/cli-plugin-eslint": "^5.0.3",
+    "@vue/cli-service": "^5.0.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "Build Command": "npm run-script build",
+  "Start Command": "npm run-script serve"
+}
