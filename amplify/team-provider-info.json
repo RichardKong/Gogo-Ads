@@ -10,6 +10,11 @@
       "StackName": "amplify-gogoads-dev-133645",
       "StackId": "arn:aws:cloudformation:us-east-1:206041546299:stack/amplify-gogoads-dev-133645/1435f7c0-a9a2-11ec-8b63-0eb6af1d49db",
       "AmplifyAppId": "d3zc8juethch"
+    },
+    "categories": {
+      "auth": {
+        "gogoadsb38b13c1": {}
+      }
     }
   }
 }
