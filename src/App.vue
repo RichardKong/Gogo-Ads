@@ -1,17 +1,9 @@
-<script setup>
-import {Authenticator}  from '@aws-amplify/ui-vue';
-import '@aws-amplify/ui-vue/styles.css';
-
-// export default {
-//   name: 'App',
-//   components: {
-//     // HelloWorld
-//   }
-// }
-</script>
-
+<!--<script setup>-->
+<!--import {Authenticator}  from '@aws-amplify/ui-vue';-->
+<!--import '@aws-amplify/ui-vue/styles.css';-->
+<!--</script>-->
 <template>
-  <authenticator>
+  <authenticator class="login_box">
     <template v-slot="{ user, signOut }">
       <h1>Hello {{ user.username }}!</h1>
       <button @click="signOut">Sign Out</button>
@@ -19,25 +11,23 @@ import '@aws-amplify/ui-vue/styles.css';
   </authenticator>
 </template>
 
-<!--<script>-->
-<!--import {Authenticator}  from '@aws-amplify/ui-vue';-->
-<!--import '@aws-amplify/ui-vue/styles.css';-->
+<script>
+// import {Authenticator}  from '@aws-amplify/ui-vue';
+import '@aws-amplify/ui-vue/styles.css';
 
-<!--// export default {-->
-<!--//   name: 'App',-->
-<!--//   components: {-->
-<!--//     // HelloWorld-->
-<!--//   }-->
-<!--// }-->
-<!--</script>-->
+export default {
+  name: 'App',
+  // components: {
+  //   // HelloWorld
+  // }
+}
+</script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.login_box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
