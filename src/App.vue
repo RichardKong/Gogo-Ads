@@ -4,22 +4,19 @@
 <!--</script>-->
 <template>
   <authenticator class="login_box">
-    <template v-slot="{ user, signOut }">
-      <h1>Hello {{ user.username }}!</h1>
-      <button @click="signOut">Sign Out</button>
-    </template>
+    <HomePage/>
   </authenticator>
 </template>
 
 <script>
-// import {Authenticator}  from '@aws-amplify/ui-vue';
+import HomePage from "@/components/HomePage";
 import '@aws-amplify/ui-vue/styles.css';
 
 export default {
   name: 'App',
-  // components: {
-  //   // HelloWorld
-  // }
+  components: {
+    HomePage
+  },
 }
 </script>
 
