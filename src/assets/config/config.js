@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-    baseURL: 'https://my7e1b4mje.execute-api.us-east-1.amazonaws.com/gogoads',
+    baseURL: 'https://my7e1b4mje.execute-api.us-east-1.amazonaws.com/gogoads/',
     timeout: 1000,
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
