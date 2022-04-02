@@ -121,31 +121,31 @@
 
 <script>
 import { Auth } from 'aws-amplify'
-import { getCurrentInstance ,onMounted } from "vue"
+// import { getCurrentInstance ,onMounted } from "vue"
 export default {
   name: 'HomePage',
   props: {
     msg: String
   },
-  setup (){
-    const { proxy } = getCurrentInstance()
-    onMounted(()=>{
-      console.log(proxy);
-      proxy.$api.post('gogoads', {
-        params: {
-          "advertisement": {
-            "price": 13.5,
-            "cat_id": 50
-          }
-        },
-      }).then(res=>{
-        console.log(res);
-      }).catch((err) => {
-        console.log(err);
-      });
-    })
-    return { proxy }
-  },
+  // setup (){
+  //   const { proxy } = getCurrentInstance()
+  //   onMounted(()=>{
+  //     console.log(proxy);
+  //     proxy.$api.post('gogoads', {
+  //       params: {
+  //         "advertisement": {
+  //           "price": 13.5,
+  //           "cat_id": 50
+  //         }
+  //       },
+  //     }).then(res=>{
+  //       console.log(res);
+  //     }).catch((err) => {
+  //       console.log(err);
+  //     });
+  //   })
+  //   return { proxy }
+  // },
   data (){
     return {
       current: 0,
@@ -201,7 +201,7 @@ export default {
         this.inputAds = false;
         this.wait = true;
         let $this = this;
-        $this.proxy.$api.post('gogoads', {
+        $this.$axios.post('/api/gogoads/gogoads', {
           params: {
             "advertisement": {
               "price": $this.price,
