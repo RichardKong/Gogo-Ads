@@ -18,7 +18,7 @@ api.post = function(url,params){
         // console.log("****************************");
         axios({
             method: 'post',
-            url:config.baseURL,
+            url:config.baseURL + url,
             params,
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
