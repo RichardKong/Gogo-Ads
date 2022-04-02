@@ -29,7 +29,7 @@
           <div class="steps-content" v-if="inputAds">
             <a-form layout="inline" :style="{marginLeft: '30px'}">
               <a-form-item label="Price of the Ad" :style="{width: '300px'}">
-                <a-input width placeholder="Please input the price"/>
+                <a-input width placeholder="Please input the price" @change="handlePriceChange"/>
               </a-form-item>
               <a-form-item label="Category">
                 <a-select
@@ -121,10 +121,30 @@
 
 <script>
 import { Auth } from 'aws-amplify'
+import { getCurrentInstance ,onMounted } from "vue"
 export default {
   name: 'HomePage',
   props: {
     msg: String
+  },
+  setup (){
+    const { proxy } = getCurrentInstance()
+    onMounted(()=>{
+      console.log(proxy);
+      proxy.$api.post('gogoads', {
+        params: {
+          "advertisement": {
+            "price": 13.5,
+            "cat_id": 50
+          }
+        },
+      }).then(res=>{
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      });
+    })
+    return { proxy }
   },
   data (){
     return {
@@ -140,6 +160,7 @@ export default {
       chosen_campaign: 0,
       chosen_brand: 0,
       chosen_customer: 0,
+      price: 0,
       user: 'username',
       steps: [
         {
@@ -156,9 +177,9 @@ export default {
   },
   created: function() {
     this.getCurrentUser();
-    this.categoryIDs = this.generateArray(0, 7000);
-    this.campaignIDs = this.generateArray(0, 10000);
-    this.brandIDs = this.generateArray(0, 10000);
+    this.categoryIDs = this.generateArray(0, 4012);
+    this.campaignIDs = this.generateArray(0, 100);
+    this.brandIDs = this.generateArray(0, 100);
     this.customerIDs = this.generateArray(0, 100);
   },
   mounted() {
@@ -179,10 +200,21 @@ export default {
       if (this.current === 1){
         this.inputAds = false;
         this.wait = true;
-      }
-      else{
-        this.wait = false;
-        this.showResult = true;
+        let $this = this;
+        $this.proxy.$api.post('gogoads', {
+          params: {
+            "advertisement": {
+              "price": $this.price,
+              "cat_id": $this.chosen_category
+            }
+          }
+        }).then((res) => {
+          console.log(res)
+          $this.wait = false;
+          $this.showResult = true;
+        }).catch((err) => {
+          console.log(err);
+        });
       }
     },
     prev() {
@@ -205,6 +237,9 @@ export default {
     },
     handleCustomerSelectionChange(value){
       this.chosen_customer = value.key;
+    },
+    handlePriceChange(value){
+      this.price = value;
     },
   }
 }
