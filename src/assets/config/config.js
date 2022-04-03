@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 const config = {
-    baseURL: 'https://my7e1b4mje.execute-api.us-east-1.amazonaws.com/gogoads/',
+    baseURL: 'https://my7e1b4mje.execute-api.us-east-1.amazonaws.com/gogoads',
     timeout: 1000,
     headers: {
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
         'Content-Type': 'application/x-www-form-urlencoded',
     },
 };
@@ -21,6 +24,9 @@ api.post = function(url,params){
             url:config.baseURL + url,
             params,
             headers: {
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
                 'Content-Type': 'application/json; charset=utf-8',
             },
         }).then(response => {
