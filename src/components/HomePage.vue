@@ -162,7 +162,6 @@
 
 <script>
 import { Auth } from 'aws-amplify'
-// import { getCurrentInstance ,onMounted } from "vue"
 import { defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
 const columns = [
@@ -214,7 +213,7 @@ export default defineComponent ({
   },
   setup() {
     const rules = {
-      price: [{required: true, trigger: 'blur'}]
+      price: [{required: true, message: 'The price is required', trigger: 'submit'}]
     };
     return {
       columns,
