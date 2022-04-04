@@ -27,13 +27,9 @@ Amplify.configure({
         endpoints: [
             {
                 name: "gogoads",
-                endpoint: "https://my7e1b4mje.execute-api.us-east-1.amazonaws.com/gogoads"
+                endpoint: "https://my7e1b4mje.execute-api.us-east-1.amazonaws.com",
+                region: 'us-east-1'
             },
-            // {
-            //     name: "MyCustomCloudFrontApi",
-            //     endpoint: "https://api.my-custom-cloudfront-domain.com",
-            //
-            // }
         ]
     }
 });
