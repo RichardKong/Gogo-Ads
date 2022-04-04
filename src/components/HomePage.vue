@@ -214,7 +214,7 @@ export default defineComponent ({
   },
   setup() {
     const rules = {
-      price: [{required: true}]
+      price: [{required: true, trigger: 'blur'}]
     };
     return {
       columns,
