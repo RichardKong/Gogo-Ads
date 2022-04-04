@@ -294,7 +294,7 @@ export default defineComponent ({
         this.inputAds = false;
         this.wait = true;
         let $this = this;
-        $this.$axios.post('/gogoads', {
+        $this.$axios.post('https://my7e1b4mje.execute-api.us-east-1.amazonaws.com/gogoads/gogoads', {
           "advertisement": {
             "price": Number($this.price),
             "cat_id": Number($this.chosen_category)
