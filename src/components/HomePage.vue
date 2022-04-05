@@ -21,7 +21,7 @@
           <p>Welcome to <span class="red">GoGo Advertisements! </span><br>
             GoGo Advertisements platform is a system that helps you to find your target clients of your advertisements.
             <br>
-            Pay 5$ to start the recommendation!
+            Pay 1$ to start the recommendation!
           </p>
         </a-card>
         <div :style="{ margin: '50px 20px'}">
@@ -91,7 +91,7 @@
               </a-form-item>
             </a-form>
             <a-button type="primary" @click="next" :style="{margin: '30px 30px'}">
-              Pay 5$ to get start
+              Pay 1$ to get start
             </a-button>
           </div>
         </div>
